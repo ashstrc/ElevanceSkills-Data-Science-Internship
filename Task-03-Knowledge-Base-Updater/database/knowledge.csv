@@ -1,0 +1,136 @@
+filename,content
+covid.txt,"COVID-19 is caused by SARS-CoV-2.
+
+Common symptoms include:
+
+Fever
+
+Dry cough
+
+Fatigue
+
+Treatment depends on severity."
+diabetes.txt,"Diabetes is a chronic disease that occurs when blood glucose levels become too high.
+
+Symptoms include:
+
+- Increased thirst
+- Frequent urination
+- Fatigue
+- Blurred vision
+
+Treatment includes insulin therapy, healthy diet and regular exercise."
+hypertension.txt,"Hypertension is a condition in which blood pressure remains consistently high.
+
+Symptoms:
+- Headache
+- Dizziness
+- Blurred vision
+
+Treatment:
+- Lifestyle changes
+- Low-sodium diet
+- Blood pressure medication"
+migraine.txt,"Migraine is a neurological condition characterized by recurring headaches.
+
+Symptoms:
+- Severe throbbing headache
+- Nausea
+- Vomiting
+- Sensitivity to light
+- Sensitivity to sound
+
+Risk Factors:
+- Family history
+- Hormonal changes
+- Stress
+- Lack of sleep
+
+Diagnosis:
+Doctors diagnose migraines based on symptoms, medical history, and neurological examinations.
+
+Treatment:
+Treatment may include pain relievers, triptans, preventive medications, hydration, and adequate rest.
+
+Prevention:
+Maintain regular sleep patterns, avoid known triggers, stay hydrated, and manage stress effectively."
+heart_disease.txt,"Heart disease is a group of conditions that affect the heart and blood vessels.
+
+Common Symptoms:
+- Chest pain
+- Shortness of breath
+- Fatigue
+- Pain in the neck, jaw, or back
+- Irregular heartbeat
+
+Risk Factors:
+- High blood pressure
+- High cholesterol
+- Diabetes
+- Smoking
+- Obesity
+- Lack of physical activity
+
+Diagnosis:
+Doctors may use ECG, Echocardiogram, Blood Tests, Stress Tests, or Coronary Angiography.
+
+Treatment:
+Treatment depends on the severity of the disease and may include lifestyle changes, medications, angioplasty, or bypass surgery.
+
+Prevention:
+Maintain a healthy diet, exercise regularly, avoid smoking, manage stress, and schedule regular health checkups."
+asthma.txt,"Asthma is a chronic respiratory disease that causes inflammation and narrowing of the airways, making breathing difficult.
+
+Symptoms:
+- Shortness of breath
+- Wheezing
+- Chest tightness
+- Persistent coughing, especially at night or early morning
+
+Common Triggers:
+- Dust mites
+- Pollen
+- Pet dander
+- Cold air
+- Exercise
+- Respiratory infections
+- Smoke and air pollution
+
+Diagnosis:
+Doctors diagnose asthma through medical history, physical examination, spirometry, peak flow measurement, and allergy testing.
+
+Treatment:
+Asthma is commonly treated with inhaled corticosteroids, bronchodilators (rescue inhalers), long-term controller medications, and avoiding known triggers.
+
+Prevention:
+Avoid allergens and irritants, follow the prescribed treatment plan, carry a rescue inhaler, monitor symptoms regularly, and attend routine medical checkups."
+arthritis.txt,"Arthritis is a condition that causes inflammation and stiffness in one or more joints. It is one of the most common causes of chronic pain and disability, especially in older adults.
+
+Symptoms:
+- Joint pain
+- Swelling
+- Stiffness, especially in the morning
+- Reduced range of motion
+- Redness around the affected joint
+
+Common Types:
+- Osteoarthritis
+- Rheumatoid Arthritis
+- Psoriatic Arthritis
+- Gout
+
+Risk Factors:
+- Aging
+- Family history
+- Obesity
+- Previous joint injuries
+- Autoimmune diseases
+
+Diagnosis:
+Doctors diagnose arthritis through physical examination, medical history, blood tests, X-rays, MRI scans, and joint fluid analysis.
+
+Treatment:
+Treatment depends on the type and severity of arthritis. Common treatments include pain relievers, anti-inflammatory medications (NSAIDs), corticosteroids, disease-modifying antirheumatic drugs (DMARDs), physical therapy, regular exercise, weight management, and in severe cases, joint replacement surgery.
+
+Prevention:
+Maintain a healthy weight, stay physically active, protect your joints from injury, eat a balanced diet, and seek medical advice if joint pain persists."

@@ -1,0 +1,25 @@
+Heart disease is a group of conditions that affect the heart and blood vessels.
+
+Common Symptoms:
+- Chest pain
+- Shortness of breath
+- Fatigue
+- Pain in the neck, jaw, or back
+- Irregular heartbeat
+
+Risk Factors:
+- High blood pressure
+- High cholesterol
+- Diabetes
+- Smoking
+- Obesity
+- Lack of physical activity
+
+Diagnosis:
+Doctors may use ECG, Echocardiogram, Blood Tests, Stress Tests, or Coronary Angiography.
+
+Treatment:
+Treatment depends on the severity of the disease and may include lifestyle changes, medications, angioplasty, or bypass surgery.
+
+Prevention:
+Maintain a healthy diet, exercise regularly, avoid smoking, manage stress, and schedule regular health checkups.

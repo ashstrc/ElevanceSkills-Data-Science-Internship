@@ -10,7 +10,7 @@ This repository contains all the projects completed during my **ElevanceSkills D
 |------|---------|--------------|--------|
 | **Task 1** | AI Sentiment Analysis Assistant | Python, Hugging Face Transformers, PyTorch, Streamlit | ✅ Completed |
 | **Task 2** | Medical Question Answering Chatbot | Python, Sentence Transformers, MedQuAD, Streamlit | ✅ Completed |
-| **Task 3** | Coming Soon | - | ⏳ |
+| **Task 3** | Dynamic Knowledge Base Updater | Python, Sentence Transformers, Pandas, Streamlit | ✅ Completed |
 | **Task 4** | Coming Soon | - | ⏳ |
 | **Task 5** | Coming Soon | - | ⏳ |
 | **Task 6** | Coming Soon | - | ⏳ |
@@ -40,7 +40,16 @@ ElevanceSkills-Data-Science-Internship/
 │   ├── database/
 │   └── ...
 │
-├── Task-03/
+├── Task-03-Knowledge-Base-Updater/
+│   ├── README.md
+│   ├── app.py
+│   ├── updater.py
+│   ├── scheduler.py
+│   ├── loader.py
+│   ├── vector_store.py
+│   ├── database/
+│   ├── new_documents/
+│   └── processed/
 ├── Task-04/
 ├── Task-05/
 └── Task-06/
@@ -66,6 +75,9 @@ Throughout the internship, the following technologies and frameworks are used:
 - XML Parsing
 - Natural Language Processing (NLP)
 - Information Retrieval
+- Pickle
+- Scheduling (Periodic Updates)
+- Local Vector Database
 
 ---
 
@@ -106,6 +118,23 @@ A retrieval-based medical chatbot built using the **MedQuAD** dataset.
 
 ---
 
+## ✅ Task 3 – Dynamic Knowledge Base Updater
+
+A dynamic knowledge base expansion system that automatically incorporates new medical documents into a local vector database without rebuilding the entire dataset.
+
+### Features
+
+- Dynamic knowledge base expansion
+- Automatic document ingestion
+- Sentence Transformer embeddings
+- Local vector database updates
+- Scheduler for periodic updates
+- Streamlit dashboard
+- Processed file management
+- Input validation for incomplete documents
+
+---
+
 # 📌 Objective
 
 The goal of this internship is to gain hands-on experience by building practical Data Science and AI applications while learning industry-standard tools, frameworks, and workflows.
@@ -122,6 +151,17 @@ https://github.com/abachaa/MedQuAD
 Place the extracted dataset inside the `data/` folder if you want to regenerate `medical_qa.csv` and embeddings.
 
 The repository already includes the generated `medical_qa.csv` and `embeddings.pkl`, so running the chatbot does not require downloading the dataset.
+
+---
+
+## 📈 Internship Progress
+
+- ✅ Task 1 Completed
+- ✅ Task 2 Completed
+- ✅ Task 3 Completed
+- ⏳ Task 4 In Progress
+- ⏳ Task 5 Pending
+- ⏳ Task 6 Pending
 
 ---
 
