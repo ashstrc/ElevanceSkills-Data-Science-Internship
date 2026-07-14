@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python cache
+*.pickle
+
+# Logs
+*.log
+
+# Original MedQuAD dataset
+Task-02-Medical-QA-Chatbot/data/
