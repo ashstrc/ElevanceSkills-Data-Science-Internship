@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+sentence-transformers
+transformers
+torch
+accelerate
+spacy
+en-core-web-sm
+networkx
+matplotlib

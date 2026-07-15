@@ -1,17 +1,17 @@
 # 🚀 ElevanceSkills Data Science Internship
 
-This repository contains all the projects completed during my **ElevanceSkills Data Science Internship**. Each task focuses on solving real-world Data Science and AI problems using Python, Machine Learning, NLP, and Deep Learning techniques.
+This repository contains all the projects completed during my **ElevanceSkills Data Science Internship**. Each task focuses on solving practical Data Science, Machine Learning, Natural Language Processing (NLP), and Generative AI problems using modern AI frameworks and open-source tools.
 
 ---
 
-## 📌 Internship Projects
+# 📌 Internship Projects
 
 | Task | Project | Technologies | Status |
 |------|---------|--------------|--------|
-| **Task 1** | AI Sentiment Analysis Assistant | Python, Hugging Face Transformers, PyTorch, Streamlit | ✅ Completed |
-| **Task 2** | Medical Question Answering Chatbot | Python, Sentence Transformers, MedQuAD, Streamlit | ✅ Completed |
-| **Task 3** | Dynamic Knowledge Base Updater | Python, Sentence Transformers, Pandas, Streamlit | ✅ Completed |
-| **Task 4** | Coming Soon | - | ⏳ |
+| **Task 1** | AI Sentiment Analysis Assistant | Python, Transformers, PyTorch, Streamlit | ✅ Completed |
+| **Task 2** | Medical Question Answering Chatbot | Python, Sentence Transformers, FAISS, spaCy, Streamlit | ✅ Completed |
+| **Task 3** | Dynamic Knowledge Base Updater | Python, Sentence Transformers, Pandas, Pickle, Streamlit | ✅ Completed |
+| **Task 4** | AI Research Paper Expert | Python, Sentence Transformers, Transformers, SmolLM2, spaCy, NetworkX, Streamlit | ✅ Completed |
 | **Task 5** | Coming Soon | - | ⏳ |
 | **Task 6** | Coming Soon | - | ⏳ |
 
@@ -50,16 +50,31 @@ ElevanceSkills-Data-Science-Internship/
 │   ├── database/
 │   ├── new_documents/
 │   └── processed/
-├── Task-04/
+│
+├── Task-04-Research-Paper-Expert/
+│   ├── README.md
+│   ├── app.py
+│   ├── parser/
+│   ├── retrieval/
+│   ├── summarizer/
+│   ├── llm/
+│   ├── memory/
+│   ├── visualization/
+│   ├── utils/
+│   ├── database/
+│   ├── requirements.txt
+│   └── ...
+│
 ├── Task-05/
+│
 └── Task-06/
 ```
 
 ---
 
-# 🛠 Technologies Used
+# 🛠 Technologies & Libraries Used
 
-Throughout the internship, the following technologies and frameworks are used:
+Throughout the internship, the following technologies and libraries are used:
 
 - Python
 - Pandas
@@ -69,15 +84,15 @@ Throughout the internship, the following technologies and frameworks are used:
 - Sentence Transformers
 - Streamlit
 - FAISS
-- Scikit-learn
 - spaCy
-- SciSpaCy
+- NetworkX
+- Matplotlib
 - XML Parsing
 - Natural Language Processing (NLP)
+- Semantic Search
 - Information Retrieval
+- Vector Databases
 - Pickle
-- Scheduling (Periodic Updates)
-- Local Vector Database
 
 ---
 
@@ -99,67 +114,79 @@ A sentiment analysis application that classifies user text into **Positive**, **
 
 ## ✅ Task 2 – Medical Question Answering Chatbot
 
-A retrieval-based medical chatbot built using the **MedQuAD** dataset.
+A semantic-search based medical chatbot built using the **MedQuAD** dataset.
 
 ### Features
 
 - Medical Question Answering
 - Semantic Search using Sentence Transformers
+- FAISS Vector Search
 - Medical Entity Recognition
 - Disease Detection
 - Medical Category Detection
-  - Symptoms
-  - Treatments
-  - Diagnosis
-  - Causes
-  - Prevention
-  - Risk Factors
 - Streamlit Interface
 
 ---
 
 ## ✅ Task 3 – Dynamic Knowledge Base Updater
 
-A dynamic knowledge base expansion system that automatically incorporates new medical documents into a local vector database without rebuilding the entire dataset.
+A system that automatically updates a local vector database with newly added medical documents without rebuilding the entire knowledge base.
 
 ### Features
 
 - Dynamic knowledge base expansion
 - Automatic document ingestion
 - Sentence Transformer embeddings
-- Local vector database updates
+- Incremental vector database updates
 - Scheduler for periodic updates
-- Streamlit dashboard
-- Processed file management
-- Input validation for incomplete documents
+- Streamlit Dashboard
+- Processed document management
 
 ---
 
-# 📌 Objective
+## ✅ Task 4 – AI Research Paper Expert
 
-The goal of this internship is to gain hands-on experience by building practical Data Science and AI applications while learning industry-standard tools, frameworks, and workflows.
+An AI-powered research assistant that retrieves relevant AI research papers using semantic search, summarizes them, explains them using an open-source Large Language Model (SmolLM2), extracts key concepts, and visualizes them through an interactive concept graph.
 
----
+### Features
 
-## Dataset
-
-The project uses the MedQuAD dataset.
-
-Download it from:
-https://github.com/abachaa/MedQuAD
-
-Place the extracted dataset inside the `data/` folder if you want to regenerate `medical_qa.csv` and embeddings.
-
-The repository already includes the generated `medical_qa.csv` and `embeddings.pkl`, so running the chatbot does not require downloading the dataset.
+- Semantic Research Paper Retrieval
+- Automatic Paper Summarization
+- AI-powered Explanation (SmolLM2)
+- Concept Extraction using spaCy
+- Dynamic Concept Graph using NetworkX
+- Conversation Memory
+- Interactive Streamlit Web Interface
 
 ---
 
-## 📈 Internship Progress
+# 🎯 Internship Objective
+
+The objective of this internship is to gain practical experience by building real-world Artificial Intelligence and Data Science applications while learning modern tools, frameworks, and deployment workflows.
+
+---
+
+# 📂 Datasets
+
+Each project uses its own dataset.
+
+| Task | Dataset |
+|------|---------|
+| Task 1 | IMDb Movie Reviews Dataset |
+| Task 2 | MedQuAD Dataset |
+| Task 3 | MedQuAD + Dynamic Medical Documents |
+| Task 4 | arXiv AI Research Papers |
+
+Refer to the individual project README files for dataset preparation instructions.
+
+---
+
+# 📈 Internship Progress
 
 - ✅ Task 1 Completed
 - ✅ Task 2 Completed
 - ✅ Task 3 Completed
-- ⏳ Task 4 In Progress
+- ✅ Task 4 Completed
 - ⏳ Task 5 Pending
 - ⏳ Task 6 Pending
 
@@ -167,9 +194,9 @@ The repository already includes the generated `medical_qa.csv` and `embeddings.p
 
 # 📜 Disclaimer
 
-This repository is created for **educational and internship purposes**.
+This repository is created for educational and internship purposes.
 
-Some datasets used in these projects are publicly available and belong to their respective owners. All source datasets are credited within the individual project folders.
+All datasets belong to their respective owners and are used only for learning and research purposes. Dataset credits are provided within the respective project folders.
 
 ---
 
@@ -182,3 +209,9 @@ B.Tech Computer Science Engineering
 Data Science Intern
 
 GitHub: https://github.com/ashstrc
+
+---
+
+## ⭐ Support
+
+If you found these projects useful, consider giving this repository a ⭐ on GitHub.
