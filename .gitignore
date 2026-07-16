@@ -85,3 +85,35 @@ tmp/
 
 # Original arXiv dataset
 Task-04-Research-Paper-Expert/data/arxiv-metadata-oai-snapshot.json
+
+# =====================================================
+# Hugging Face Downloads
+# =====================================================
+
+models/
+downloads/
+checkpoints/
+
+# =====================================================
+# Model Cache
+# =====================================================
+
+*.gguf
+*.ckpt
+*.onnx
+
+# =====================================================
+# Test Images
+# =====================================================
+
+test_images/
+outputs/
+
+data/
+
+*.egg-info/
+dist/
+build/
+
+.env
+.env.*

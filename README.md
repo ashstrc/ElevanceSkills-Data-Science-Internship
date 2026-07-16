@@ -12,7 +12,7 @@ This repository contains all the projects completed during my **ElevanceSkills D
 | **Task 2** | Medical Question Answering Chatbot | Python, Sentence Transformers, FAISS, spaCy, Streamlit | ✅ Completed |
 | **Task 3** | Dynamic Knowledge Base Updater | Python, Sentence Transformers, Pandas, Pickle, Streamlit | ✅ Completed |
 | **Task 4** | AI Research Paper Expert | Python, Sentence Transformers, Transformers, SmolLM2, spaCy, NetworkX, Streamlit | ✅ Completed |
-| **Task 5** | Coming Soon | - | ⏳ |
+| **Task 5** | Multimodal AI Assistant | Qwen2.5-VL, SmolLM2, Transformers, Streamlit | ✅ Completed |
 | **Task 6** | Coming Soon | - | ⏳ |
 
 ---
@@ -65,7 +65,20 @@ ElevanceSkills-Data-Science-Internship/
 │   ├── requirements.txt
 │   └── ...
 │
-├── Task-05/
+├── ├── Task-05-Multimodal-AI-Assistant/
+│   ├── README.md
+│   ├── app.py
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── assistant/
+│   ├── answering/
+│   ├── data/
+│   ├── llm/
+│   ├── memory/
+│   ├── reasoning/
+│   ├── routing/
+│   ├── validation/
+│   └── vision/
 │
 └── Task-06/
 ```
@@ -93,6 +106,11 @@ Throughout the internship, the following technologies and libraries are used:
 - Information Retrieval
 - Vector Databases
 - Pickle
+- Qwen2.5-VL
+- SmolLM2
+- Computer Vision
+- Vision-Language Models (VLM)
+- Multi-Modal AI
 
 ---
 
@@ -160,6 +178,37 @@ An AI-powered research assistant that retrieves relevant AI research papers usin
 
 ---
 
+
+## ✅ Task 5 – Multimodal AI Assistant
+
+A modular AI assistant capable of understanding both **text** and **image** inputs using separate vision and language models.
+
+Instead of relying on a single AI model, the assistant follows a modular pipeline consisting of:
+
+- Vision Understanding
+- Structured Evidence Extraction
+- Scene Representation
+- Intelligent Question Routing
+- Evidence-Based Answer Generation
+- Visual Reasoning
+- Response Validation
+- Conversation Memory
+
+### Features
+
+- Text Chat using SmolLM2
+- Image Analysis using Qwen2.5-VL
+- Image + Question Answering
+- Structured Visual Evidence Extraction
+- Intelligent Question Routing
+- Evidence-Based Responses
+- Contextual Visual Reasoning
+- Conversation Memory
+- Response Validation
+- Streamlit Web Interface
+
+---
+
 # 🎯 Internship Objective
 
 The objective of this internship is to gain practical experience by building real-world Artificial Intelligence and Data Science applications while learning modern tools, frameworks, and deployment workflows.
@@ -176,6 +225,7 @@ Each project uses its own dataset.
 | Task 2 | MedQuAD Dataset |
 | Task 3 | MedQuAD + Dynamic Medical Documents |
 | Task 4 | arXiv AI Research Papers |
+| Task 5 | User Images + Vision-Language Models |
 
 Refer to the individual project README files for dataset preparation instructions.
 
@@ -187,7 +237,7 @@ Refer to the individual project README files for dataset preparation instruction
 - ✅ Task 2 Completed
 - ✅ Task 3 Completed
 - ✅ Task 4 Completed
-- ⏳ Task 5 Pending
+- ✅ Task 5 Completed
 - ⏳ Task 6 Pending
 
 ---
