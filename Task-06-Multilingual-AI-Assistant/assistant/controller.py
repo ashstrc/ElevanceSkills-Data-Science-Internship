@@ -4,13 +4,17 @@ from vision.image_analyzer import ImageAnalyzer
 from vision.scene_builder import SceneBuilder
 
 from routing.question_router import QuestionRouter
+
 from answering.evidence_answerer import EvidenceAnswerer
 
 from reasoning.reasoner import Reasoner
 from llm.explainer import ReasoningEngine
 
 from validation.validator import ResponseValidator
+
 from memory.conversation import ConversationMemory
+
+from language.processor import LanguageProcessor
 
 
 class AssistantController:
@@ -29,11 +33,15 @@ class AssistantController:
 
         self.memory = ConversationMemory()
 
+        self.language = LanguageProcessor()
+
         self.vision = None
+
         self.engine = None
+
         self.validator = None
 
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
 
     def load_vision(self):
 
@@ -41,7 +49,7 @@ class AssistantController:
 
             self.vision = ImageAnalyzer()
 
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
 
     def load_reasoner(self):
 
@@ -49,9 +57,11 @@ class AssistantController:
 
             self.engine = ReasoningEngine()
 
-            self.validator = ResponseValidator(self.engine)
+            self.validator = ResponseValidator(
+                self.engine
+            )
 
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
 
     def run(self):
 
@@ -69,7 +79,7 @@ class AssistantController:
 
             self.run_image_question()
 
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
 
     def run_text_chat(self):
 
@@ -79,18 +89,45 @@ class AssistantController:
 
         while True:
 
-            question = input("You : ").strip()
+            user_input = input("You : ").strip()
 
-            if question.lower() == "exit":
+            if user_input.lower() == "exit":
+
                 break
 
-            answer = self.engine.generate(question)
+            context = self.language.process_input(
+                user_input
+            )
+
+            answer = self.engine.generate(
+                context.normalized_text
+            )
+
+            answer = self.language.process_output(
+                answer,
+                context
+            )
+
+            self.memory.add_interaction(
+
+                question=context.original_text,
+
+                normalized_question=context.normalized_text,
+
+                answer=answer,
+
+                language=context.primary_language
+
+            )
 
             print("\nAssistant:\n")
-            print(answer)
-            print()
 
-    # -------------------------------------------------------------
+            print(answer)
+
+            print()
+            
+            
+                # ---------------------------------------------------------
 
     def run_image_analysis(self):
 
@@ -98,14 +135,16 @@ class AssistantController:
 
         image_path = input("\nImage Path : ").strip()
 
-        evidence = self.vision.extract_visual_evidence(image_path)
+        evidence = self.vision.extract_visual_evidence(
+            image_path
+        )
 
         print("\n" + "=" * 60)
         print("VISUAL EVIDENCE")
         print("=" * 60)
         print(evidence)
 
-    # -------------------------------------------------------------
+    # ---------------------------------------------------------
 
     def run_image_question(self):
 
@@ -115,16 +154,24 @@ class AssistantController:
 
         while True:
 
-            image_path = input("Image Path : ").strip()
+            image_path = input(
+                "Image Path : "
+            ).strip()
 
             if image_path.lower() == "exit":
+
                 return
 
-            evidence = self.vision.extract_visual_evidence(image_path)
+            evidence = self.vision.extract_visual_evidence(
+                image_path
+            )
 
-            scene = self.scene_builder.build_scene(evidence)
+            scene = self.scene_builder.build_scene(
+                evidence
+            )
 
             self.memory.set_image(image_path)
+
             self.memory.set_evidence(evidence)
 
             print("\n" + "=" * 60)
@@ -134,19 +181,33 @@ class AssistantController:
 
             while True:
 
-                question = input("\nQuestion ('new' for another image): ").strip()
+                user_input = input(
+                    "\nQuestion ('new' for another image): "
+                ).strip()
 
-                if question.lower() == "exit":
+                if user_input.lower() == "exit":
+
                     return
 
-                if question.lower() == "new":
+                if user_input.lower() == "new":
+
                     break
 
-                route = self.router.route(question)
+                # ---------------------------------------------
+                # Multilingual Processing
+                # ---------------------------------------------
 
-                # -------------------------------------------------
+                context = self.language.process_input(
+                    user_input
+                )
+
+                route = self.router.route(
+                    context.normalized_text
+                )
+
+                # ---------------------------------------------
                 # IMAGE ANALYSIS
-                # -------------------------------------------------
+                # ---------------------------------------------
 
                 if route == QuestionRouter.IMAGE_ANALYSIS:
 
@@ -157,15 +218,26 @@ class AssistantController:
 
                     continue
 
-                # -------------------------------------------------
+                # ---------------------------------------------
                 # DIRECT EVIDENCE
-                # -------------------------------------------------
+                # ---------------------------------------------
 
                 if route == QuestionRouter.DIRECT_EVIDENCE:
 
-                    answer = self.answerer.answer(question, scene)
+                    answer = self.answerer.answer(
+
+                        context.normalized_text,
+
+                        scene
+
+                    )
 
                     if answer is not None:
+
+                        answer = self.language.process_output(
+                            answer,
+                            context
+                        )
 
                         print("\n" + "=" * 60)
                         print("FINAL ANSWER")
@@ -173,33 +245,68 @@ class AssistantController:
                         print(answer)
                         print("=" * 60)
 
-                        self.memory.add_interaction(question, answer)
+                        self.memory.add_interaction(
+
+                            question=context.original_text,
+
+                            normalized_question=context.normalized_text,
+
+                            answer=answer,
+
+                            language=context.primary_language
+
+                        )
 
                         continue
 
-                # -------------------------------------------------
-                # REASONING
-                # -------------------------------------------------
+                # ---------------------------------------------
+                # VISUAL REASONING
+                # ---------------------------------------------
 
                 self.load_reasoner()
 
                 history = self.memory.get_history()
 
                 prompt = self.prompt_builder.build_prompt(
+
                     evidence=evidence,
-                    question=question,
+
+                    question=context.normalized_text,
+
                     history=history
+
                 )
 
                 print("\nGenerating response...\n")
 
-                answer = self.engine.generate(prompt)
+                answer = self.engine.generate(
+                    prompt
+                )
                 
+                
+                
+                                # ---------------------------------------------
+                # LOCALIZE RESPONSE
+                # ---------------------------------------------
+
+                answer = self.language.process_output(
+                    answer,
+                    context
+                )
+
+                # ---------------------------------------------
+                # VALIDATION
+                # ---------------------------------------------
+
                 report = self.validator.validate(
                     evidence=evidence,
-                    question=question,
+                    question=context.normalized_text,
                     answer=answer
                 )
+
+                # ---------------------------------------------
+                # OUTPUT
+                # ---------------------------------------------
 
                 print("\n" + "=" * 60)
                 print("FINAL ANSWER")
@@ -214,7 +321,18 @@ class AssistantController:
                 print(f"Reason      : {report['reason']}")
                 print("=" * 60)
 
+                # ---------------------------------------------
+                # MEMORY
+                # ---------------------------------------------
+
                 self.memory.add_interaction(
-                    question,
-                    answer
+
+                    question=context.original_text,
+
+                    normalized_question=context.normalized_text,
+
+                    answer=answer,
+
+                    language=context.primary_language
+
                 )
